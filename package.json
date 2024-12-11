@@ -1,0 +1,39 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "gh-pages": "npm run build && git push origin --delete gh-pages && git checkout master && git subtree push --prefix dist origin gh-pages",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --config webpack.dev.js",
+    "deploy": "npm run build && git add . && git commit -m 'Build and deploy' && git subtree push --prefix dist origin gh-pages",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "eslint": "8.57",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "html-loader": "^5.1.0",
+    "prettier": "^3.4.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.6.3",
+    "webpack-merge": "^6.0.1"
+  }
+}
