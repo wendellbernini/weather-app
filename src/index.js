@@ -2,14 +2,20 @@ import './styles/styles.css';
 
 function checkForm() {
   const form = document.querySelector('#form');
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const input = document.querySelector('#input');
     const metric = document.querySelector('#metric');
-    weatherData(input.value, metric.value);
+    const loading = document.querySelector('#loading');
+    loading.textContent = 'loading...';
+    try {
+      await run(input.value, metric.value);
+    } finally {
+      loading.textContent = '';
+    }
   });
 }
-async function weatherData(local, metric) {
+const run = async function weatherData(local, metric) {
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${local}?unitGroup=metric&key=ES2L3XMKUVTFZA6T5T3MJJJ2L&contentType=json`
   );
@@ -52,6 +58,6 @@ async function weatherData(local, metric) {
   validTemp(metric);
   validIcon();
   dataDOM();
-}
+};
 
 checkForm();
