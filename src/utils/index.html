@@ -6,6 +6,22 @@
     <title>weather-app</title>
   </head>
   <body>
-    weather-app
+    <form id="form">
+      <label for="search">Local:</label>
+      <input type="text" id="input" />
+      <label for="metric">Metric:</label>
+      <select id="metric">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+      </select>
+      <input type="submit" id="submit" />
+    </form>
+
+    <div>
+      <p id="local-data">Local: <span></span></p>
+      <p id="temperatura-data">Temperatura:<span></span></p>
+      <p id="icon-data">Icon:<span></span></p>
+      <img id="gif" />
+    </div>
   </body>
 </html>

@@ -25,7 +25,7 @@ module.exports = {
     ],
 
     // Limita o número de declarações em uma função
-    'max-statements': ['error', 10],
+    'max-statements': ['error', 30],
 
     // Previne o uso de números "mágicos"
     'no-magic-numbers': ['error', { ignore: [0, 1] }],
