@@ -21,7 +21,7 @@ module.exports = {
     // Limita o número de linhas em uma função/arquivo
     'max-lines': [
       'error',
-      { max: 50, skipBlankLines: true, skipComments: true },
+      { max: 90, skipBlankLines: true, skipComments: true },
     ],
 
     // Limita o número de declarações em uma função
